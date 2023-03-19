@@ -1,0 +1,725 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>html </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="dd5be5b4-c1c9-4c07-9cc1-c062de70227f" class="page sans"><header><h1 class="page-title">html </h1></header><div class="page-body"><p id="5ad97618-bdb9-45eb-94fd-fe15b7c8db8e" class="">TREATING THE NASOLABIAL FOLDS WITH A POLYCAPROLACTONE FILLER
+Expert consensus on the use of polycaprolactone-based Ellansé - a novel collagen-stimulating filler — for multi-site and multi-level injection of the outer facial contour to improve nasolabial folds</p><p id="5e1fb5f0-9d30-4bd0-a063-47a102819a13" class="">
+</p><p id="f4a8b910-21c3-4689-bf74-485933a60ddf" class="">ABSTRACT
+In May 2022, the China Medical Adviser Board (MAB) and dozens of domestic experts discussed and reached a consensus on the clinical application of
+polycaprolactone-based Ellansé S-a novel collagen- stimulating filler-for multi-site and multi-level injection of the outer facial contour to improve nasolabial folds. The purpose of this consensus is to provide clinical reference and advice for clinicians to use Ellansé to improve nasolabial folds.</p><p id="f184baa2-2688-40ac-964a-e3dbef891b84" class="">
+</p><p id="79ba9ef7-82b4-4214-9698-3d7b716f2553" class="">IN MAY 2022, THE CHINA MEDICAL ADVISER
+Board (MAB) and dozens of domestic experts discussed and reached a consensus on the clinical application of polycaprolactone-based Ellansé S (AQTIS Medical B.V., The Netherlands)-a novel collagen-stimulating filler-for multi-site and multi-level injections on the outer facial contour to improve the nasolabial folds. The purpose of this consensus is to provide clinical reference and advice for clinicians on how to use Ellansé to improve nasolabial folds.
+The nasolabial fold, a depression area on the face extending from the lateral alae nasi to the corner of the mouth, is a demarcation line separating the cheek and jaw and a marker of facial ageing!. It can now be treated through face lifting, surgery, and filler injection, among which, the filler injection is a minimally invasive procedure producing a reliable filling effect with very good safety and stability when avoiding surgical wounds or incisions as well as some postoperative complications. Because of this, it is highly accepted among patients and widely used.
+At present, the injection of fillers is the most extensively</p><p id="a523edc4-452c-43ca-a0a2-8715f636db2c" class="">used method for the correction of nasolabial folds. In this consensus, external contour injections are applied to improve nasolabial folds, which introduces the concept of the ligament line. In this method, one end of the ligament attaches to the bone and supports the soft facial tissues with the bone surface as a fulcrum. In the meantime, the lateral injection of fillers (i.e. external contour injection) can strengthen the ligament&#x27;s supporting effect in the ligament area and pull the soft tissues in the middle and lower faces upward to produce a lifting effect24. With the lifting effect, the skin moves toward the ears and temples, and the sagging soft tissues gradually return to their original position, thus improving the nasolabial folds due to soft tissue ptosis6. Injection at the temples, middle cheek, and lower mandible may not only lift the ligaments but also produce a noticeable lifting effect, as these sites are most likely to show signs of ageing2. A novel injection technique is proposed as guidance for the effective operation of filler in these
+areas.
+Ellansé is a novel collagen-stimulating filler with high safety and efficacy. According to a study conducted by Hassan Galadari comparing polycaprolactone (PCL) and</p><p id="80ca1a41-70b7-48b0-8fa8-d91db0255266" class="">hyaluronic acid (HA) in the correction of nasolabial folds, Ellansé had a longer maintenance time for correction treatment of nasolabial folds, and the average injection volume of PCL fillers was 13% less than that of HA?
+<code>Material characteristics</code>
+The main component of Ellansé are the 25-50μm polycaprolactone (PCL) microspheres suspended evenly in gels composed of carboxymethylcellulose (CMC). Ellansé features superior viscoelasticity* compared to other biofillers, and PCL degrades in vivo by means of bulk degradation*. Unlike other regenerative materials that will elicit strong secondary inflammatory responses as they degrade in vivo°, PCL microspheres keep their volume and morphology unchanged during degradation (i.e. no secondary inflammatory reaction will be elicited).
+CMC has been Generally Recognized As Safe by the FDA. In rheology, CMC is a pseudoplastic fluid; the viscosity of CMC decreases significantly with the
+increase of shear stress, and such a sharp decrease in viscosity makes it easy to be injected through thinner needles. Ellansé S has a very high elastic modulus G&#x27;, which is about 100OPa*. The rheological properties of </p><p id="f8fc5b48-0744-418a-a20a-b90d32643fa6" class="">the filler with high cohesion can produce a good lifting effect and can increase tissue projection by providing hardness and resistance to muscle and gravity to achieve liftingo. Therefore, for this technique, we suggest the injection of fillers of a high elastic modulus (G&#x27;) or high cohesion with needles to maximise the lifting effect.
+CMC gel in the filler has an immediate filling effect and is gradually absorbed by the human body after 2-3 months4-5, while CMC gel degrades, PCL stimulates approximately the same amount of new collagen. Ellansé&#x27;s lasting filling effect comes from collagen regeneration and deposition. Ellansé has the following efficacies:
+The immediate filling effect through the CMC gel Lasting shaping effect based on Type I collagenous fibre scaffold formed by biostimulation of PCL microspheres
+Extremely high elastic modulus G&#x27; resulting in good supporting and lifting effect.
+<code>Clinical application of Ellansé S for multi-site and multi-level injections on the outer facial contour to improve nasolabial folds</code>
+The external contour injection is a multi-level injection method that can improve the nasolabial folds and ensure the safety of the injection process. The injection levels selected by this method are on the periosteum, between the deep temporal fascia and the superficial temporal fascia, and the subcutaneous fat layer, which are</p><p id="8427e087-8076-4e3c-9873-bee7e5a2dd12" class="">relatively safe levels with relatively few significant vessels and nerves.
+Injection method and effect
+Before injection, a facial photo shall be taken after face cleansing. After disinfection with iodophor, the treatment is conducted from top to bottom, from outside to inside, and from deep to shallow according to the scheme for external contour injection.
+For shaping the external contour of the temporal hairline, the injection levels are the subcutaneous fat layer, the middle temporal fascia layer, and the periosteum. The injections should result in the removal orreduction of the temporal contour, improving temporal depression, lifting the soft tissues in the middle and lower faces, and improving nasolabial folds.
+When injecting at the cheek, the injection level targeted is the subcutaneous fat layer. This should result in the removal or reduction of the contour of the posterior cheek, improving cheek depression, lifting the soft tissues in the middle and lower faces, and improving nasolabial folds.</p><p id="8d62c1c0-3f42-4c59-924f-25695a7884c8" class="">Points for attention when performing this treatment: Within 4 hours, the injection site should be protected from contact with water;
+Within 24 hours, no makeup is allowed at the injection site;
+Within 3 days, no facial massage is allowed to avoid displacement, and excessively exaggerated facial expressions should be avoided;
+Within 7 days, no alcohol, spicy food, allergy-causing food, etc. is allowed, and strenuous exercise should be avoided; and
+Within 6 months, long-term oral administration of hormones, immunosuppressants and other drugs affecting collagen regeneration is not recommended.
+<code>Efficacy and safety of Ellansé S in clinical application
+</code>In a study conducted by Marion Moers-Carpi et al, on the
+long-term safety and efficacy of Ellansé S in Europe, the WSRS score showed a significant improvement rate of 84% after 12 months and 64% after 18 months; according to GAIS assessment, the improvement rate was 91% after 12 months, 83% after 18 months, and more than 50% of subjects believed that skin quality had been improved within 18 months&quot;.
+From the launch of Ellansé in Europe in 2009 to October 2021, the incidence of adverse events of Ellansé was 0.0619%, equivalent to one adverse event in every 1,616 clinical cases; most of the reported adverse events were minor, such as nodules and swelling, which were often associated with injection operation. In which nodule/mass accounted for 0.277%, swelling 0.0181%,</p><p id="ee48d334-dffe-4213-884a-eb54277276cd" class="">bruising/hematoma 0.0015%, infection 0.0012%, and induration 0.0075%. Ellansé has been established in Europe for 13 years and is a safe and effective collagen- stimulating filler, it was approved with a registration certificate by the National Medical Products Administration in 2021.
+<code>Discussion</code>
+Since Furnas introduced the concept of the ligament line, many studies have focused on how it could be further used for facial rejuvenation. A study conducted by Gabriela Casabona et al. in 2019 described the lifting effect of temporal injection on the
+lower face, providing evidence
+for the lifting effect of temporal
+injection on the middle and
+lower faces. According to the
+study of Schenck et al, the injection
+at the outer side of the ligament line,
+followed by an injection at the inner side, can not only lift the middle and lower faces but also reduce the dose required for the medial face area (inner side of the line of ligaments) to achieve an aesthetic effect5.
+From
+the
+perspective
+anatomy.
+the
+external contour
+injection can lift
+facial soft tissues
+and reduce the appearance of nasolabial folds. However, for the sake of injection in a safe and effective manner, there are still several principles to be followed. First, inject from top to bottom, which can prevent the soft tissue that has already returned to its original position from moving down again; Secondly, inject from outside to inside, where the continuous nature of fascia
+of</p><p id="145dd42d-ff79-48e1-b9af-1a1e8ca22a91" class="">helps the medial soft tissue move, which can reduce the injection volume. Finally, inject from deep to shallow, where injection into the bone surface is given as the first step to provide support for the overlying soft tissues, which is like laying the foundations of a building. Only in this way can the soft tissues better return to their original positions. If you inject first into the shallow fat layer, it can result in unnatural facial expressions or a &#x27;false face.&#x27;
+<code>Conclusions
+</code>The excellent high viscoelasticity of Ellansé can produce a good lifting effect; meanwhile, PCL microspheres stimulate collagen production, and the filling effect is aesthetic and natural without creating a &#x27;false face.&#x27; The external contour injection technique can effectively lift the soft tissues in the middle and lower faces and improve nasolabial folds through multi-site and multi-level injections on the outer facial contour. Ellansé, a structurally stable filler injected in a safe and reliable manner, can produce a long-lasting filling effect, both aesthetic and natural, and with which the subjects expressed a high degree of satisfaction.
+<code>Acknowledgements</code>
+This consensus was discussed
+and approved by Luo Shengkang, Li Qin, Cui Haiyan, Shi Bing, Yang Rongya, Lin Shangli, Wang Hang, Zhao Hongyi, Song Weimin, Huang Jianmei, Liu Bin, Wang Yongshu, Zhu Bainian and Chen Ruihong at &quot;Expert Consensus Seminar on Ellansé&quot; held in May 2022. This consensus is prepared by: Ma Wenshu.</p><p id="1033ab9e-325f-43e6-bb59-f1ddebbd87a4" class="">
+</p></div></article></body></html>
